@@ -1,17 +1,10 @@
 ---
-title: My Site
+title: About me
 toc: false
 ---
 
-This is the landing page.
+{{< timeline >}}
+    {{< event date="29.01.2026" title="Beginning blog" link="#" pos="top" color="#3b82f6" >}}
 
-## Explore
+{{< /timeline >}}
 
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).

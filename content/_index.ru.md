@@ -1,0 +1,10 @@
+---
+title: Обо мне
+toc: false
+---
+
+{{< timeline >}}
+    {{< event date="29.01.2026" title="Запуск Блога" link="#" pos="top" color="#3b82f6" >}}
+
+{{< /timeline >}}
+

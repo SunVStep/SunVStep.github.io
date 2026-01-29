@@ -1,0 +1,30 @@
+{{ $pos := .Get "pos" | default "top" }}
+{{ $color := .Get "color" | default "#3b82f6" }}
+{{ $link := .Get "link" | default "#" }}
+
+<div style="display: flex; flex-direction: column; align-items: center; width: 200px; position: relative;">
+    
+    {{ if eq $pos "top" }}
+        <div style="position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <a href="{{ $link }}" style="text-decoration: none !important; padding: 10px 18px; border-radius: 12px; color: white !important; font-weight: 600; font-size: 13px; white-space: nowrap; transition: all 0.3s ease; background-color: {{ $color }}; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                {{ .Get "title" }}
+            </a>
+            <div style="width: 2px; height: 50px; background: linear-gradient(to bottom, {{ $color }}, transparent); opacity: 0.6; margin-top: 8px;"></div>
+        </div>
+    {{ end }}
+
+    <div style="width: 14px; height: 14px; border-radius: 50%; background-color: {{ $color }}; border: 3px solid #111; z-index: 20; box-shadow: 0 0 10px {{ $color }};"></div>
+    
+    <span style="position: absolute; top: 25px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #94a3b8; letter-spacing: 1px; font-weight: bold;">
+        {{ .Get "date" }}
+    </span>
+
+    {{ if eq $pos "bottom" }}
+        <div style="position: absolute; top: 30px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <div style="width: 2px; height: 50px; background: linear-gradient(to top, {{ $color }}, transparent); opacity: 0.6; margin-bottom: 8px;"></div>
+            <a href="{{ $link }}" style="text-decoration: none !important; padding: 10px 18px; border-radius: 12px; color: white !important; font-weight: 600; font-size: 13px; white-space: nowrap; transition: all 0.3s ease; background-color: {{ $color }}; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(5px)'" onmouseout="this.style.transform='translateY(0)'">
+                {{ .Get "title" }}
+            </a>
+        </div>
+    {{ end }}
+</div>

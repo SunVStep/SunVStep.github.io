@@ -1,0 +1,11 @@
+services:
+  hugo:
+    image: hugomods/hugo:exts
+    volumes:
+      - .:/src
+    ports:
+      - "1313:1313"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    command: server --disableFastRender --bind 0.0.0.0 --poll 700ms
