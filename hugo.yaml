@@ -29,15 +29,14 @@ markup:
 # Параметры темы
 params:
   theme:
-    default: light
+    default: light # или dark
   navbar:
     displayTitle: true
     displayLogo: true
+    sticky: true # Шапка будет всегда сверху при скролле
   footer:
     enable: true
-    displayCopyright: false # Мы выключаем стандартный, так как создали свой partial
-  editURL:
-    enable: false
+    displayCopyright: false # Мы используем свой кастомный футер
 
 # Меню
 menu:

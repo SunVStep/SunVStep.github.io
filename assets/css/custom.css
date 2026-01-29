@@ -1,0 +1,100 @@
+/* 1. ПЕРЕМЕННЫЕ ЦВЕТОВ (Без анимаций) */
+
+:root {
+    /* СВЕТЛАЯ ТЕМА */
+    --nav-bg: #f9fafb;          /* Очень светлый серый (серый 50) */
+    --nav-border: #e5e7eb;      /* Граница хедера */
+    
+    --footer-bg: #f3f4f6;       /* Чуть более насыщенный серый (серый 100) */
+    --footer-border: #d1d5db;   /* Граница футера */
+    
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+}
+
+html.dark {
+    /* ТЕМНАЯ ТЕМА */
+    --nav-bg: #171717;          /* Темно-серый (Zinc 900) */
+    --nav-border: #262626;      /* Граница хедера */
+    
+    --footer-bg: #0a0a0a;       /* Почти черный (Zinc 950) */
+    --footer-border: #1a1a1a;   /* Граница футера */
+    
+    --text-main: #e5e7eb;
+    --text-muted: #a3a3a3;
+}
+
+/* 2. ПРИМЕНЕНИЕ СТИЛЕЙ (Убраны все transition) */
+
+/* ХЕДЕР */
+.hextra-navbar-container {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--nav-border) !important;
+    backdrop-filter: none !important; /* Убираем блюр, раз теперь есть сплошной цвет */
+}
+
+/* ФУТЕР */
+.footer-custom {
+    margin-top: 4rem;
+    padding: 2.5rem 0;
+    background-color: var(--footer-bg) !important;
+    border-top: 1px solid var(--footer-border) !important;
+}
+
+/* ТЕКСТ И ССЫЛКИ */
+.copyright-text { 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    color: var(--text-main); 
+}
+
+.built-text { 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+}
+
+.contact-title { 
+    font-size: 10px; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    color: var(--text-muted); 
+}
+
+.contact-link { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.4rem; 
+    font-size: 0.8125rem; 
+    color: var(--text-main); 
+    text-decoration: none; 
+}
+
+.contact-link:hover { 
+    color: #3b82f6 !important; 
+}
+
+/* СЕТКА ФУТЕРА */
+.footer-container {
+    display: flex !important;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    justify-content: space-between !important;
+    align-items: flex-start;
+}
+
+.footer-section { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-section.right { align-items: flex-end; }
+.contact-links { display: flex; gap: 1.5rem; margin-top: 0.25rem; }
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .footer-container { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        text-align: center !important; 
+        gap: 1.5rem; 
+    }
+    .footer-section.right { align-items: center !important; }
+}
