@@ -1,7 +1,7 @@
 baseURL: "https://sunvstep.github.io/"
 title: SunVStep | Robotics & ML
 defaultContentLanguage: en
-
+enableInlineShortcodes: true
 # Настройки языков
 languages:
   en:
@@ -28,6 +28,8 @@ markup:
 
 # Параметры темы
 params:
+  page:
+    width: full   # или full — попробуй wide сначала, full может сломать navbar
   theme:
     default: light # или dark
   navbar:

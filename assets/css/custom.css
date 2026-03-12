@@ -1,100 +1,267 @@
-/* 1. ПЕРЕМЕННЫЕ ЦВЕТОВ (Без анимаций) */
+/* ===================================================================
+   custom.css — объединённый и исправленный файл:
+   - возвращённы и улучшены переменные темы (светлая/тёмная)
+   - hero: текст слева, фото справа (desktop), фото под текстом (mobile)
+   - корректно отрисовываются линии <hr> и футер
+   - защитные правила для Hextra-контейнера
+   =================================================================== */
 
+/* 1. ПЕРЕМЕННЫЕ ТЕМЫ */
 :root {
-    /* СВЕТЛАЯ ТЕМА */
-    --nav-bg: #f9fafb;          /* Очень светлый серый (серый 50) */
-    --nav-border: #e5e7eb;      /* Граница хедера */
-    
-    --footer-bg: #f3f4f6;       /* Чуть более насыщенный серый (серый 100) */
-    --footer-border: #d1d5db;   /* Граница футера */
-    
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
+  /* СВЕТЛАЯ ТЕМА */
+  --nav-bg: #f9fafb;
+  --nav-border: #e5e7eb;
+
+  --footer-bg: #f3f4f6;
+  --footer-border: #d1d5db;
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+
+  --site-max-width: 1100px; /* читаемая ширина контента */
 }
 
 html.dark {
-    /* ТЕМНАЯ ТЕМА */
-    --nav-bg: #171717;          /* Темно-серый (Zinc 900) */
-    --nav-border: #262626;      /* Граница хедера */
-    
-    --footer-bg: #0a0a0a;       /* Почти черный (Zinc 950) */
-    --footer-border: #1a1a1a;   /* Граница футера */
-    
-    --text-main: #e5e7eb;
-    --text-muted: #a3a3a3;
+  --nav-bg: #171717;
+  --nav-border: #262626;
+
+  --footer-bg: #0a0a0a;
+  --footer-border: #1a1a1a;
+
+  --text-main: #e5e7eb;
+  --text-muted: #a3a3a3;
 }
 
-/* 2. ПРИМЕНЕНИЕ СТИЛЕЙ (Убраны все transition) */
 
-/* ХЕДЕР */
+/* 2. ГЛОБАЛЬНЫЙ КОНТЕЙНЕР (Hextra) */
+/* Центрируем контент и даём удобные отступы.
+   Я меняю margin-left:0/margin-right:auto на margin:0 auto — чтобы контейнер был по центру,
+   но не жестко растягивал контент на 100% и не «уходил влево». */
+.hextra-content-container,
+main.hextra-main,
+.content {
+  max-width: var(--site-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box;
+}
+
+/* Убираем стандартный сайдбар Hextra (если нужен — удалите это правило) */
+.hextra-sidebar-container {
+  display: none !important;
+}
+
+/* На больших экранах чуть больше паддинга */
+@media (min-width: 1024px) {
+  .hextra-content-container,
+  main.hextra-main {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+
+/* 3. NAVBAR (если хотите — можно менять) */
 .hextra-navbar-container {
-    background-color: var(--nav-bg) !important;
-    border-bottom: 1px solid var(--nav-border) !important;
-    backdrop-filter: none !important; /* Убираем блюр, раз теперь есть сплошной цвет */
+  background-color: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--nav-border) !important;
+  backdrop-filter: none !important;
 }
 
-/* ФУТЕР */
-.footer-custom {
-    margin-top: 4rem;
-    padding: 2.5rem 0;
-    background-color: var(--footer-bg) !important;
-    border-top: 1px solid var(--footer-border) !important;
+
+/* 4. HERO — текст + картинка */
+/* Структура: .hero-grid (grid wrapper), .hero-text, .hero-image */
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ТЕКСТ И ССЫЛКИ */
-.copyright-text { 
-    font-size: 0.875rem; 
-    font-weight: 600; 
-    color: var(--text-main); 
-}
-
-.built-text { 
-    font-size: 0.75rem; 
-    color: var(--text-muted); 
-}
-
-.contact-title { 
-    font-size: 10px; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    color: var(--text-muted); 
-}
-
-.contact-link { 
-    display: flex; 
-    align-items: center; 
-    gap: 0.4rem; 
-    font-size: 0.8125rem; 
-    color: var(--text-main); 
-    text-decoration: none; 
-}
-
-.contact-link:hover { 
-    color: #3b82f6 !important; 
-}
-
-/* СЕТКА ФУТЕРА */
-.footer-container {
+/* На десктопе — фиксированная правая колонка для картинки */
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr minmax(240px, 460px) !important;
+    gap: 3rem;
+  }
+  .hero-image {
+    justify-self: end !important;
     display: flex !important;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    justify-content: space-between !important;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* Текстовые стили */
+.hero-text { }
+.hero-title,
+.hero-text .text-5xl { font-size: 3rem; line-height: 1.05; margin: 0 0 0.5rem; color: var(--text-main); }
+@media (min-width: 768px) {
+  .hero-title { font-size: 3.5rem; }
+}
+.hero-info { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+.hero-role { font-weight: 600; color: var(--text-main); }
+
+/* Кнопки */
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline {
+  border: 2px solid #2563eb;
+  padding: 0.75rem 1.1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #2563eb;
+}
+.btn-outline:hover { background: #2563eb; color: white; }
+
+/* Картинка */
+.hero-image { display: flex; justify-content: center; align-items: center; }
+.hero-image img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  display: block;
+}
+
+
+/* 5. HR (линия) — универсальная и адаптивная */
+.site-hr,
+hr {
+  border: none !important;
+  height: 1px !important;
+  background-color: var(--nav-border) !important;
+  margin: 4rem 0 !important;
+  display: block;
+  opacity: 1;
+}
+
+/* Если нужно более заметная граница в светлой теме: */
+@media (prefers-color-scheme: light) {
+  .site-hr, hr { background-color: #d1d5db !important; }
+}
+
+/* В тёмной теме переменные уже заданны — будет использовать var(--nav-border) */
+
+
+/* 6. Секция «Навыки» (сохранено стилистически) */
+.skills-grid { display: grid; grid-template-columns: 1fr; gap: 1.875rem; margin-top: 2.5rem; }
+@media (min-width: 768px) {
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.skill-card {
+  padding: 1.875rem;
+  border-radius: 1.125rem;
+  border: 1px solid var(--nav-border);
+  background: #f9fafb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+html.dark .skill-card {
+  background: rgba(255,255,255,0.02);
+  border-color: #222;
+}
+.skill-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.skill-card p { color: var(--text-muted); line-height: 1.5; }
+
+
+/* 7. FOOTER — восстановлено и улучшено */
+.footer-custom {
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  background-color: var(--footer-bg) !important;
+  border-top: 1px solid var(--footer-border) !important;
+  box-sizing: border-box;
+}
+
+/* контейнер футера: ограничиваем ширину и выравниваем */
+.footer-container {
+  display: flex;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .footer-section { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer-section.right { align-items: flex-end; }
 .contact-links { display: flex; gap: 1.5rem; margin-top: 0.25rem; }
 
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-    .footer-container { 
-        flex-direction: column !important; 
-        align-items: center !important; 
-        text-align: center !important; 
-        gap: 1.5rem; 
-    }
-    .footer-section.right { align-items: center !important; }
+.copyright-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
 }
+.built-text { font-size: 0.75rem; color: var(--text-muted); }
+.contact-title {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+.contact-link:hover { color: #3b82f6; }
+
+/* Мобильная адаптация футера */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .footer-section.right { align-items: center; }
+}
+
+
+/* 8. Мелкие защитные правила (если где-то есть !important глобально).
+   Они минимальны и только для элементов, которые могли ломаться. */
+
+.hero-grid,
+.hero-image,
+.hero-text,
+.skills-grid,
+.skill-card,
+.footer-container {
+  box-sizing: border-box;
+}
+
+/* Если где-то в теме есть более агрессивные !important — можно поднять приоритет,
+   но используйте осторожно. Ниже — пример для экстремальных случаев — закомментируйте
+   если не нужно:
+*/
+
+/*
+.hero-grid { display:grid !important; grid-template-columns: 1fr minmax(240px,460px) !important; }
+.hero-image { justify-self: end !important; }
+*/
