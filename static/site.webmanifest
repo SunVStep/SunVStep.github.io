@@ -1,0 +1,34 @@
+{
+  "name": "SunVStep | Robotics & ML",
+  "short_name": "SunVStep",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable",
+      "media": "(prefers-color-scheme: light)"
+    },
+    {
+      "src": "/favicon-dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable",
+      "media": "(prefers-color-scheme: dark)"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

@@ -1,17 +1,18 @@
 baseURL: "https://sunvstep.github.io/"
 title: SunVStep | Robotics & ML
-defaultContentLanguage: en
+defaultContentLanguage: ru
 enableInlineShortcodes: true
 # Настройки языков
 languages:
-  en:
-    languageName: English
-    languageCode: en
-    weight: 1
   ru:
     languageName: Russian
     languageCode: ru
+    weight: 1
+  en:
+    languageName: English
+    languageCode: en
     weight: 2
+
 
 # Подключение темы
 module:
@@ -35,26 +36,31 @@ params:
   navbar:
     displayTitle: true
     displayLogo: true
+    logo:
+      path: favicon.svg
+      dark: favicon-dark.svg
+      link: /
+      width: 40
+      height: 20
     sticky: true # Шапка будет всегда сверху при скролле
   footer:
     enable: true
     displayCopyright: false # Мы используем свой кастомный футер
-
 # Меню
 menu:
   main:
-    - identifier: documentation
-      name: Documentation
-      pageRef: /docs
-      weight: 1
-    - identifier: about
-      name: About
-      pageRef: /about
-      weight: 2
-    - identifier: contact
-      name: GitHub ↗
-      url: "https://github.com/SunVStep"
-      weight: 3
+ #   - identifier: documentation
+ #     name: Documentation
+ #     pageRef: /docs
+ #     weight: 1
+ #   - identifier: about
+ #     name: About
+ #     pageRef: /about
+ #     weight: 2
+ #   - identifier: contact
+ #     name: GitHub ↗
+ #     url: "https://github.com/SunVStep"
+ #     weight: 3
     - name: Search
       weight: 4
       params:
