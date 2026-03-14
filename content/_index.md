@@ -60,6 +60,56 @@ hide: true
 </div>
 </div>
 </div>
+<div class="project-card">
+  <div class="project-media">
+    <img src="/images/project-kompas.jpg"
+         alt="Моделирование в Kompas 3D"
+         class="project-image">
+  </div>
+  <div class="project-content">
+    <h3 class="text-2xl font-bold mb-3 mt-0">
+      Автоматизация моделирования и оптимизация механических узлов в Kompas 3D
+    </h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-6">
+      Разработка скриптов API Kompas 3D для автоматического параметрического моделирования и оптимизации роботизированных узлов. Новый проект в работе (февраль 2026).
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span class="tag">Kompas 3D</span>
+      <span class="tag">API Scripting</span>
+      <span class="tag">Мехатроника</span>
+      <span class="tag">CAD Automation</span>
+    </div>
+    <a href="/projects/kompas-automation" 
+       class="mt-auto inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline">
+      Подробнее о проекте →
+    </a>
+  </div>
+</div>
+<div class="project-card">
+  <div class="project-media">
+    <img src="/images/project-drone.jpg"
+         alt="Автономный дрон ROS2"
+         class="project-image">
+  </div>
+  <div class="project-content">
+    <h3 class="text-2xl font-bold mb-3 mt-0">
+      Автономный дрон с системой навигации и компьютерным зрением на ROS2
+    </h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-6">
+      Полноценная система автономного полёта: SLAM, obstacle avoidance, YOLOv10 для распознавания объектов. Реализовано на ROS2 Humble + PyTorch.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span class="tag">ROS2</span>
+      <span class="tag">PyTorch</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">YOLOv10</span>
+    </div>
+    <a href="/projects/drone" 
+       class="mt-auto inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline">
+      Подробнее о проекте →
+    </a>
+  </div>
+</div>
 
 ## Текущий фокус исследований
 <div class="learning-grid">
