@@ -13,7 +13,7 @@ hide: true
 </div>
 <div class="flex flex-wrap gap-6 justify-center md:justify-start mt-8 hero-buttons">
 <a href="/resume.pdf" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md transition-colors btn-primary" aria-label="Скачать резюме (PDF)">Скачать резюме (PDF)</a>
-<a href="https://github.com/SunVStep" target="_blank" class="inline-flex items-center px-8 py-4 border-2 border-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-xl transition-colors btn-outline" aria-label="Перейти на GitHub">GitHub →</a>
+<!--<a href="https://github.com/SunVStep" target="_blank" class="inline-flex items-center px-8 py-4 border-2 border-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-xl transition-colors btn-outline" aria-label="Перейти на GitHub">GitHub →</a>-->
 </div>
 </div>
 <div class="flex justify-center md:justify-end hero-image">
@@ -23,18 +23,42 @@ hide: true
 
 ## Навыки
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 skills-grid">
-<div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
-<h3 class="text-2xl font-bold mb-4">Инженерия и робототехника</h3>
-<p class="text-gray-700 dark:text-gray-300">SolidWorks • AutoCAD • ROS2 • Arduino • PLC • Схемотехника • 3D-печать</p>
-</div>
-<div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
-<h3 class="text-2xl font-bold mb-4">Программирование</h3>
-<p class="text-gray-700 dark:text-gray-300">Python • Go • Rust • C++ • Git • Docker</p>
-</div>
-<div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
-<h3 class="text-2xl font-bold mb-4">Машинное обучение и AI</h3>
-<p class="text-gray-700 dark:text-gray-300">PyTorch • TensorFlow • Computer Vision • Reinforcement Learning • LLM fine-tuning</p>
-</div>
+  <div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
+    <h3 class="text-2xl font-bold mb-3">Embedded & Control Systems / Robotics</h3>
+    <div class="flex items-center gap-1.5 mb-2">
+		<span class="skill-level">
+			<span class="filled"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span>
+		</span>
+		<span class="text-sm font-medium text-gray-600 dark:text-gray-400">Junior</span>
+	</div>
+    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+      Arduino • PLC (Ladder/ST) • PID-регуляторы • ROS2 (навигация, perception) • ROS2 tooling (rosdep, colcon) • Схемотехника • 3D-печать
+    </p>
+  </div>
+  <div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
+    <h3 class="text-2xl font-bold mb-3">Programming & DevOps Tools</h3>
+    <div class="flex items-center gap-1.5 mb-2">
+		<span class="skill-level">
+			<span class="filled"></span><span class="filled"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span>
+		</span>
+		<span class="text-sm font-medium text-gray-600 dark:text-gray-400">Junior+</span>
+	</div>
+    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+      Python (OOP, multiprocessing, asyncio, scripting, NumPy / Pandas / Matplotlib) • C++ (базовый: ROS nodes, embedded) • Git (advanced branching, CI/CD) • Docker (multi-stage, compose) • Linux • Bash automation
+    </p>
+  </div>
+  <div class="p-8 border rounded-2xl bg-gray-50 dark:bg-gray-900/50 shadow-sm skill-card">
+    <h3 class="text-2xl font-bold mb-3">CAD/CAE & Simulation</h3>
+    <div class="flex items-center gap-1.5 mb-2">
+		<span class="skill-level">
+			<span class="filled"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span>
+		</span>
+		<span class="text-sm font-medium text-gray-600 dark:text-gray-400">Junior</span>
+	</div>
+    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+      Kompas-3D V24 • SolidWorks Simulation • MATLAB / Simulink • FluidSIM • Multisim
+    </p>
+  </div>
 </div>
 
 ## Последние проекты
@@ -118,18 +142,15 @@ hide: true
 <div class="learning-grid">
 <div class="learning-item">
 <h4>Advanced ROS2 + Navigation2</h4>
-<p>Кастомные навигационные стеки и multi-robot coordination. Применяю в проекте автономного манипулятора (обновление февраль 2026).</p>
+<p>Кастомные навигационные стеки и multi-robot coordination. Применяю в разработке робота-паллетайзера (обновление март 2026).</p>
 </div>
 <div class="learning-item">
-<h4>PyTorch 2.5 + Torch Compile</h4>
-<p>Оптимизация моделей для реального времени. Тестирую ускорение YOLOv10 в компьютерном зрении для дронов.</p>
+<h4>Gazebo Simulation</h4>
+<p>Изучение возможностей тестирования алгоритмов и проектирования робототехнических систем.</p>
 </div>
 <div class="learning-item">
-<h4>Reinforcement Learning (Stable Baselines3)</h4>
-<p>Создание custom environments для роботизированной сборки. Эксперименты с reward shaping.</p>
+<h4>Bash automation</h4>
+<p>Прохождение курса "The Missing Semester of Your CS Education 2026"</p>
 </div>
-<div class="learning-item">
-<h4>Kompas 3D API + Scripting</h4>
-<p>Автоматизация моделирования и оптимизации механических узлов. Новый проект в работе.</p>
 </div>
 </div>

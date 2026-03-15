@@ -30,9 +30,9 @@ markup:
 # Параметры темы
 params:
   page:
-    width: full   # или full — попробуй wide сначала, full может сломать navbar
+    width: full 
   theme:
-    default: light # или dark
+    default: dark
   navbar:
     displayTitle: true
     displayLogo: true

@@ -135,3 +135,34 @@ html.dark .learning-item p{ color:#9ca3af; }
 
 /* Accessibility helpers */
 a:focus{ outline-offset:3px; }
+
+.skill-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* расстояние между кружками */
+}
+
+.skill-level .filled,
+.skill-level .empty {
+  width: 12px;      /* одинаковый размер */
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.skill-level .filled {
+  background-color: #3b82f6; /* синий для заполненных */
+}
+
+.skill-level .empty {
+  border: 2px solid #9ca3af; /* серый контур для пустых */
+  background: transparent;
+}
+
+html.dark .skill-level .filled {
+  background-color: #60a5fa;
+}
+
+html.dark .skill-level .empty {
+  border-color: #6b7280;
+}
